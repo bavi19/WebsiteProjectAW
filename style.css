@@ -1,0 +1,108 @@
+/* Basic styles shared by all three pages */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f2f2f2;
+    color: #222;
+}
+header {
+    background-color: #315c38;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+h1 {
+    margin: 0 0 15px;
+    font-size: 30px;
+}
+/* Flexbox keeps the navigation links together */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+nav a {
+    color: white;
+    padding: 5px;
+}
+nav a[aria-current="page"] {
+    font-weight: bold;
+    text-decoration-thickness: 3px;
+}
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+a {
+    color: #24502b;
+}
+a:hover {
+    text-decoration: none;
+}
+a:focus-visible {
+    outline: 3px solid #bd7a00;
+    outline-offset: 3px;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.home-photo {
+    width: 100%;
+}
+section {
+    margin-top: 25px;
+}
+/* CSS Grid creates two columns for the gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+figure {
+    margin: 0;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    background-color: #eee;
+}
+figcaption {
+    margin-top: 10px;
+}
+footer {
+    padding: 15px;
+    text-align: center;
+    background-color: #ddd;
+}
+/* Smaller screens get a single column */
+@media (max-width: 600px) {
+    main {
+        margin: 10px;
+        padding: 15px;
+    }
+    h1 {
+        font-size: 25px;
+    }
+    nav {
+        gap: 12px;
+    }
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    .gallery img {
+        height: auto;
+    }
+}
